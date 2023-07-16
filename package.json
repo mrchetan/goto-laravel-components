@@ -1,0 +1,60 @@
+{
+	"name": "goto-laravel-components",
+	"displayName": "Laravel Goto Components",
+	"description": "Laravel Goto Components is a Visual Studio Code extension that allows you to quickly jump to components in your Laravel project.",
+	"icon": "logo.png",
+	"version": "1.0.2",
+	"publisher": "MrChetan",
+	"repository": "https://github.com/mrchetan/goto-laravel-components.git",
+	"engines": {
+		"vscode": "^1.80.0"
+	},
+	"categories": [
+		"Other",
+		"Debuggers"
+	],
+	"keywords": [
+        "PHP",
+        "Laravel",
+		"Laravel goto components",
+		"goto components",
+		"Laravel goto component",
+		"component",
+		"goto component",
+		"goto",
+		"go to",
+		"Laravel goto",
+		"Laravel component",
+		"Laravel components"
+    ],
+	"activationEvents": [
+        "onLanguage:blade"
+    ],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"configuration": {
+            "type": "object",
+            "title": "Laravel goto components configuration",
+            "properties": {
+                "laravel_goto_components.regex": {
+                    "type": "string",
+                    "default": "(?<=<x-)(?!slot)[a-zA-Z.-]+",
+                    "description": "Custom regex for matching components"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "webpack --config ./build/node-extension.webpack.config.js",
+		"watch": "webpack --watch --config ./build/node-extension.webpack.config.js",
+		"package": "webpack --mode production --devtool hidden-source-map --config ./build/node-extension.webpack.config.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.80.0",
+		"typescript": "^5.1.6",
+		"ts-loader": "^9.4.4",
+		"webpack": "^5.88.1",
+		"webpack-cli": "^5.1.4"
+	}
+}
