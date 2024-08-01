@@ -1,5 +1,8 @@
 # Change Log
 
+## v1.1.0 (01-Aug-2024)
+- Update default regex
+
 ## v1.0.0 (16-Jul-2023)
 
 **Added**
